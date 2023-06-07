@@ -1,0 +1,1395 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Condensed&family=Roboto:wght@500&display=swap');
+*,*::before,*::after{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Lato,sans-serif !important;
+    color: #fff !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url(https://marvel-b1-cdn.bc0a.com/f00000000114841/www.florsheim.com/shop/index/FW22-FL-SecondRefresh-MainLookout-Desktop.jpg);
+    background-position: right;
+    background-size: cover;
+    position: relative;
+    z-index: 1000;
+}
+nav{
+    width: 100%;
+    height: 12vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 21px;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 999999;
+}
+.menu-btn{
+    display: none;
+}
+.cart-container{
+    display: none;
+}
+.menu{
+}
+ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+ul li{
+    margin:0 10px;
+    padding: 0.6rem 0;
+}
+ul li a{
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 150ms ease-in-out;
+}
+ul li a:hover{
+    opacity: 0.7;
+    color: #fff !important;
+}
+.website-introduction{
+    position: absolute;
+    top:50%;
+    left: 7.5%;
+    transform: translateY(-50%);
+    font-size:40px;
+    width:50%;
+}
+.shop-now-link{
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    padding:0.7rem 1rem;
+    color: #fff;
+    transition: all 150ms ease-in-out;
+}
+.shop-now-link:hover{
+    opacity: 0.7 !important;
+    color: #fff;
+}
+.shoes-types,.products-quality,.contact-link,.shipping-country{
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    margin: 10vh 0;
+}
+.shoes-types-grid{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,46%);
+    grid-template-rows: 80vh;
+    grid-auto-rows: 60vh;
+    gap: 20px 10px;
+}
+.grid-header{
+    grid-column: 1/3;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1577208288347-b24488f3efa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXMlMjBzaG9wfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 22px;
+    border-radius: 5px;  
+}
+.grid-header  h3{
+    padding: 10px;
+    font-weight: 600;
+}
+.shoes-type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px black;
+    padding: 10px;
+}
+.shoes-type .type-name{
+    padding: 10px;
+    font-size: 22px;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+.shoes-type .shop-now-link{
+    transform: translateY(200%);
+    opacity: 0;
+    transition: transform .5s ease-in-out,opacity .15s ease-in-out;
+}
+.shoes-type.type1{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://www.mensjournal.com/wp-content/uploads/2022/01/MensOxfordShoes1.jpg?w=1200&quality=86&strip=all);
+    background-position: center;
+    background-size: cover;
+}
+.shoes-type.type2{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://post.healthline.com/wp-content/uploads/2020/07/432289-10-Best-Running-Shoes-for-Men-732x549-Feature.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.shoes-type.type3{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.news18.com/ibnlive/uploads/2016/05/shoes-1.jpg?impolicy=website&width=510&height=356);
+    background-position: center;
+    background-size: cover;
+}
+.shoes-type.type4{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://cdn.hiconsumption.com/wp-content/uploads/2021/10/Best-Chelsea-Boots-For-Men-0-Hero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.more-link{
+    grid-column: 1/3;
+    font-size: 24px;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://www.suitsexpert.com/wp-content/uploads/different-mens-dress-shoes-styles-and-types.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.type-name.show-on-screen,.shop-now-link.show-on-screen{
+    opacity: 1;
+    transform: translateY(0);
+}
+.quality,.country-selection-container{
+    width: 50%;
+    height: 80vh;
+    margin-left: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://cdn.shopify.com/s/files/1/0015/9229/5523/products/10490_FXFX_101_M_KAKAHA_FoxFox_600x600.jpg?v=1647988069);
+    background-position: center;
+    background-size: cover;
+}
+.quality-description,.shipping-description{
+    width: 70%;
+    padding: 2rem;
+    transform: translateX(140%);
+    background-color: #3B1E08;
+    opacity: 0;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.quality-description p{
+    line-height: 25px;
+}
+.quality-description.show-on-screen,.shipping-description.show-on-screen{
+    opacity: 1;
+    transform: translateX(80%);
+}
+
+.break-sections{
+    width: 100%;
+    height: 40vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    background:url(https://t4.ftcdn.net/jpg/02/59/23/75/360_F_259237527_vp9OOZ5TupbgHzujTE5UMRVDg5K7ICo4.jpg);
+    background-size: cover;
+    padding: 1.2rem;
+}
+.break-sections.sales{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.right-side{
+    display: flex;
+}
+.signup-buttons{
+    outline: none;
+    border: none;
+    width: 120px;
+    border-radius: 5px;
+}
+.signup-buttons:hover{
+    opacity: 0.8;
+}
+.link-container{
+    width: 50%;
+    height: 80vh;
+    margin: auto;
+    margin-right: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://miro.medium.com/max/1400/1*6Al1I8JhHAMGVGkwZRCX7A.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+.link-description{
+    width: 70%;
+    padding: 2rem;
+    transform: translateX(-140%);
+    background-color: #3B1E08;
+    opacity: 0;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.link-description.show-on-screen{
+    opacity: 1;
+    transform: translateX(-80%);
+}
+.country-selection-container{
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://d2hlo835aj7uqe.cloudfront.net/production/wp-content/uploads/2018/08/HAZMAT-643A7425-2346.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.shipping-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shipping-description a{
+    margin-top: 10px;
+}
+ 
+a{
+    cursor: pointer;
+}
+
+/*pop up offer*/
+
+.popup{
+    min-width:50vw;
+    min-height: 40vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 1001;
+    background-color:rgb(214, 214, 214);
+    color: black;
+    padding: 2rem;
+    text-align: center;
+    transition: all .25s ease-in-out;
+}
+
+.popup.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.popup-form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: auto;
+    gap: 20px 10px;
+}
+.popup-form a{
+    color: rgb(0,0,0,0.7);
+    text-decoration:none;
+}
+.popup-form label{
+    text-align: left;
+    display: block;
+}
+.popup-form input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #999;
+}
+.popup-form button{
+    width:100%;
+    height: 40px;
+    outline: none;
+    background: transparent;
+    border:none;
+    background-color: rgb(104, 184, 187);
+    color:#fff;
+    font-weight: 500;
+    transition: all .15s ease-in-out;
+}
+.popup-form button:hover{
+    transform: scale(1.01);
+}
+.popup-form .col.cent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    transition: all 200ms ease;
+    z-index: 1000;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+    min-height: 30vh;
+    background-color: black;
+    margin-bottom: 0;
+    margin-top: 20vh;
+}
+.footer-content{
+    padding: 1.5rem 0;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    gap: 15px;
+    grid-auto-rows: auto;
+}
+.footer-col .col-header{
+    font-size: 28px;
+    font-weight: 600;
+}
+.col-content a{
+    text-decoration: none;
+    display: block;
+}
+.col-content p{
+    margin: 10px 0;
+}
+.footer-col .fa-brands{
+    padding: .5rem;
+    font-size: 20px;
+    cursor: pointer;
+}
+.footer-col .fa-brands:hover{
+    transform: scale(1.1);
+}
+.footer-email{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.footer-email i{
+    transform: translateX(-100%) scale(1.1);
+    color: black;
+    padding-right: 5px;
+}
+.copy-right-container{
+    height: 50px;
+    background-color: #3B1E08;
+    padding: 5px;
+    display: flex;
+    padding:0 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.copy-right-container p{
+    font-size: 15px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+
+.header.products{
+    min-height:max-content;
+    background: none;
+}
+.search-filter{
+    width: 100%;
+    margin: 8vh 0 15vh;
+    text-align: center;
+    color: black;
+}
+.filters-container{
+    display: flex;
+    justify-content: center;
+}
+
+.drop-down{
+    margin:0 7vw;
+}
+.drop-button{
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0.5rem 0;
+    font-size: 19px;
+    cursor: pointer;
+    color: black;
+    border: 1px solid black;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.drop-down.active>button,
+.drop-button:hover{
+    background-color: blue;
+    border-color: blue;
+    color: #fff;
+}
+.drop-down{
+    position: relative;
+    z-index: 100;
+}
+.drop-down-menu{
+    position: absolute;
+    left: 0;
+    top: calc(100%+.25rem);
+    min-width: 15vw;
+    background-color: #fff;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 200ms ease-in-out;
+    pointer-events: none;
+}
+.drop-down.active .drop-down-menu{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.drop-down-menu a{
+    color: black;
+    display: block;
+    margin: 0.5rem 0;
+    text-decoration: none;
+}
+.drop-down-menu.sizes{
+    max-width: 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.drop-down-menu.price{
+    width: 20vw;
+}
+.price-input{
+    width: 100%;
+    display: flex;
+    margin:10px 0 20px;
+}
+.price-input .field{
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.field input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    text-align: center;
+    margin-left: 6px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+.price-input .separator{
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a.selected{
+    color: blue;  
+}
+.drop-down-menu .apply{
+    padding: 0.5rem;
+    margin: 10px 0;
+    transition: all .5s ease-in-out;
+}
+.drop-down-menu .apply:hover{
+    background-color: blue;
+    border-color: blue;
+    color: #fff;
+}
+.products{
+    width: 100%;
+    margin: 10vh 0 25vh;
+    color: black;
+}
+.search-filters{
+    width: 80%;
+    margin: auto;
+}
+.search-filters ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+}
+.search-filters ul li{
+    position: relative;
+    padding: 1rem 0.8rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.search-filters ul li:hover{
+    background-color: #999;
+    border-color: #999;
+}
+.search-filters ul li i{
+    margin-left: 5px;
+    color: black;
+}
+.products-container{
+    width:90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,32.5%);
+    gap: 20px;
+}
+.products-container .product{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    padding: 0.2rem;
+    display: none;
+}
+.products-container .product:hover{
+    box-shadow: 0 2px 6px black;
+}
+.products-container .product p{
+    padding: 0;
+    margin: 0;
+    opacity: 0.8;
+}
+.products-container .product .product-image{
+    width: 100%;
+    height: 50vh;
+}
+.products-container .product .product-image i{
+    color: #917504;
+    opacity: 0.8;
+}
+.product .product-type-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sizes-available,.colors-available{
+    margin:8px 0;
+}
+.sizes-available .available .size-available{
+    padding: 0.2rem;
+    border: 1px solid #999;
+}
+.sizes-available .available,.colors-available .available{
+    display: flex;
+    gap: 10px;
+}
+.colors-available .available .color-available{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.colors-available .available .color-available.color1{
+    background-color: black;
+}
+.colors-available .available .color-available.color2{
+    background-color: #3B1E08;
+}
+.colors-available .available .color-available.color3{
+    background-color: darkslategrey;
+}
+.product .add-to-cart{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,150%);
+    padding: 1rem;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    border: 1px solid #999;
+    z-index: 100;
+}
+.products-container .product:hover .add-to-cart{
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}
+.products-container .product:hover .overlay-product{
+    opacity:1;
+}
+.overlay-product{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
+}
+.product.ox1 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/0003/4108/2175/products/984647.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.ox2 .product-image{
+    background:url(https://johnlewis.scene7.com/is/image/JohnLewis/004071741);
+    background-position: bottom;
+    background-size: cover;
+}
+.product.ox3 .product-image{
+    background:url(https://www.carminashoemaker.com/cdnassets//outlet_cordovan_shoes_women.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.ox4 .product-image{
+    background:url(https://deichmann.scene7.com/asset/deichmann/US_01_413262_01?$rr_results$&defaultImage=default_obs);
+    background-position: bottom;
+    background-size: cover;
+}
+
+
+
+
+.product.sp1 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/2277/0487/products/756116658741ca7bdcfd68c6108f2f90.png?v=1662688429);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp2 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/2277/0487/products/2c978f85529bd7b92f7361d3c4afacde.png?v=1662603689);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp3 .product-image{
+    background:url(https://assets.ajio.com/medias/sys_master/root/20220520/19BQ/6286dc83aeb26921afadeca1/red_tape_white_lace-up_walking_shoes.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp4 .product-image{
+    background:url(https://assets.ajio.com/medias/sys_master/root/20211021/2uVV/6170a4a9f997ddf8f1dd4066/campus_white_artemis_lace-up_running_shoes.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp5 .product-image{
+    background:url(https://contents.mediadecathlon.com/p1568125/k$53157b7f3c9996662b1dbb60417b38a4/-run-cushion-slash.jpg?&f=452x452);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp6 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/2277/0487/products/9a25e44c2166fe8580ce4c5fa28ed9db_400x.png?v=1662688538);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp7 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/2277/0487/products/e093646f2f58744eb4b8c2ca0671e704.png?v=1658542651);
+    background-position: center;
+    background-size: cover;
+}
+.product.sp8 .product-image{
+    background:url(https://assets.ajio.com/medias/sys_master/root/20211023/zqZM/617307f8f997ddf8f1e32ba1/campus_navy_blue_tormentor_lace-up_running_shoes.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+.product.sp1 .color1{
+    background: linear-gradient(to bottom,red,black);
+}
+.product.sp2 .color1{
+    background: linear-gradient(to bottom,white,black);
+}
+.product.sp2 .color-available.color2{
+    background: linear-gradient(to bottom,blue,black);
+}
+.product.sp3 .color-available.color1{
+    background: linear-gradient(to bottom,blue,white);
+}
+.product.sp3 .color-available.color2{
+    background: linear-gradient(to bottom,black,white);
+}
+.product.sp4 .color-available.color1{
+    background: linear-gradient(to bottom,white,red);
+}
+.product.sp4 .color-available.color2{
+    background-color: white;
+    border: 1px solid black;
+}
+.product.sp5 .color-available.color1{
+    background-color: blue;
+}
+.product.sp5 .color-available.color2{
+    background-color: aqua;
+}
+.product.sp7 .color-available.color1{
+    background-color: black;
+}
+.product.sp7 .color-available.color2{
+    background-color: white;
+    border: 1px solid black;
+}
+.product.sp7 .color-available.color3{
+    background-color: red;
+}
+.product.sp8 .color-available.color1{
+    background-color:navy;
+}
+
+
+
+
+.product.ch1 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/0419/1525/products/1024x1024-Men-Cavalier-Sandstone-012422-Side.jpg?v=1646693841);
+    background-position: center;
+    background-size: cover;
+}
+.product.ch2 .product-image{
+    background:url(https://5.imimg.com/data5/YM/FR/MY-8852934/men-27s-brown-suede-leather-chelsea-boots-500x500.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.ch3 .product-image{
+    background:url(https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1661867872-JqfrcTwC6M_astorflex_bitflex_gifts_0_original.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.ch4 .product-image{
+    background:url(https://media.gq-magazine.co.uk/photos/60dd8f680f38c9ada66445ed/master/w_1920,h_1280,c_limit/CHELSEA%20BOOTS_0007_Bottegga%20veneta.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.ch5 .product-image{
+    background:url(https://cdn.fashiola.co.uk/L742726295/ganni-womens-low-leather-chelsea-boots.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.ch1 .color-available.color1{
+    background-color: burlywood;
+}
+.product.ch3 .color-available.color3{
+    background-color: burlywood;
+}
+.product.ch4 .color-available.color1{
+    background:linear-gradient(to bottom,black,red);
+}
+.product.ch4 .color-available.color2{
+    background:linear-gradient(to bottom,white,red);
+}
+.product.ch5 .color-available.color2{
+    background:linear-gradient(to bottom,burlywood,black);
+}
+
+
+
+.product.cl1 .product-image{
+    background:url(https://www.mensjournal.com/wp-content/uploads/allenedmonds-3f4a909f-49b2-4267-ae94-53574082735b.jpg?quality=86&strip=all);
+    background-position: center;
+    background-size: cover;
+}
+.product.cl2 .product-image{
+    background:url(https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1636406048-churchs-1636406043.jpg?crop=1xw:1xh;center,top&resize=480:*);
+    background-position: center;
+    background-size: cover;
+}
+.product.cl1 .color-available.color2,.product.cl2 .color-available.color2{
+    background-color:saddlebrown;
+}
+
+
+.product.sa1 .product-image{
+    background:url(https://greek-sandals.com/wp-content/uploads/2020/06/IMG_20200625_203953.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa2 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/0371/5416/0772/products/1_6decf474-8385-4a26-983f-89f578f050f4.jpg?v=1650428785);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa3 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/0753/2615/products/64199_-COGNAC_-MAIN_REVERT_1_600x.jpg?v=1657279936);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa4 .product-image{
+    background:url(https://www.artigianodelcuo.io/2830-thickbox_default/handmade-in-italy-mens-sandals-in-dark-brown-leather.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa5 .product-image{
+    background:url(https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1658414571-birkenstock-arizona-1658414564.jpg?crop=1xw:1xh;center,top&resize=480:*);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa6 .product-image{
+    background:url(http://cdn.shopify.com/s/files/1/0523/9875/1922/collections/GS7334-1_160x_a4db6e55-3c3a-4793-af62-c395e86b42b5_1200x1200.jpg?v=1650871648);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa7 .product-image{
+    background:url(https://n.nordstrommedia.com/id/sr3/6510ead1-20b9-4708-b217-86635fbe516a.jpeg?h=365&w=240&dpr=2);
+    background-position: bottom;
+    background-size: cover;
+}
+.product.sa8 .product-image{
+    background:url(https://cdn.shopify.com/s/files/1/0371/5416/0772/products/1_f1a23b25-28d2-4291-aeea-7b22afaaafac.jpg?v=1646294206);
+    background-position: center;
+    background-size: cover;
+}
+.product.sa1 .color-available.color3{
+    background-color:slategrey;
+}
+.product.sa2 .color-available.color2{
+    background-color: peru;
+}
+.product.sa3 .color-available.color1{
+    background-color: darkolivegreen;
+}
+.product.sa5 .color-available.color2{
+    background-color:wheat;
+}
+.product.sa8 .color-available.color1{
+    background-color: #917504;
+}
+.product.active{
+    display: block;
+}
+.search-filters.hide{
+    display: none;
+}
+
+
+/*cart page*/
+.header.cart{
+    min-height: max-content;
+    background: none;
+    margin-bottom: 12vh;
+}
+.cart-page{
+    color: black;
+    margin: 80px auto;
+    width: 80%;
+}
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background-color:rgb(134, 214, 217);
+    font-weight: normal;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: rgb(134, 214, 217);
+    font-size: 12px;
+    display: block;
+}
+td img{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid rgb(134, 214, 217);
+    width: 100%;
+    max-width: 400px;
+}
+td:last-child{
+    text-align: right;
+}
+td button{
+    padding: .7rem;
+    outline: none;
+    border: none;
+    background: none;
+    border: 1px solid rgb(134, 214, 217);
+    transition: all .15s ease-in-out;
+}
+td button:hover{
+    background-color: rgb(134, 214, 217);
+    color: #fff;
+}
+
+/*about page*/
+body.about-page{
+    background-color: rgb(234, 234, 234);
+}
+.header.about{
+    min-height: max-content;
+    background: none;
+}
+.about-us{
+    width: 80%;
+    margin:0 auto;
+    margin-top: 20vh;
+    min-height: 100vh;
+    color: rgb(134, 214, 217);
+}
+.about-us-intro{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 40vh;
+    gap: 15px;
+    margin: 15vh 0 22vh;
+    font-size: 19px;
+}
+.about-us-intro img{
+    width: 100%;
+}
+.about-us p{
+    color: rgb(0,0,0,0.7);
+}
+.about-us h2{
+    padding-bottom:15px;
+    font-size: 38px;
+}
+.about-grid{
+    padding:2rem 8rem;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 15vh 15vh;
+    gap: 25px;
+}
+.about-grid div{
+    border: 1px solid #999;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    gap: 10px;
+    font-size: 20px;
+}
+.about-grid div i{
+    font-size: 28px;
+    color: rgb(134, 214, 217);
+}
+
+/*Registration*/
+
+body.registration-page{
+    background-color:rgb(234, 234, 234);
+}
+.header.registration{
+    background: none;
+    min-height: max-content;
+}
+
+.registration-container{
+    width: 50%;
+    margin:30vh auto;
+    background:linear-gradient(to right,rgb(34, 240, 226),rgb(51, 100, 214));
+    padding: 2.2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.switch-buttons{
+    width: 50%;
+    margin:20px auto;
+    border: 1px solid rgb(104, 184, 187);
+    display: flex;
+    padding: 0;
+}
+.switch-buttons button{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    font-weight: 600; 
+    transition: all .25s ease-in-out;
+}
+.switch-buttons button.selected{
+    background-color: rgb(104, 184, 187) !important;
+    color: #fff;
+}
+.login-form,.sign-up-form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 10px auto;
+    gap: 20px;
+    display: none;
+}
+.login-form input,.sign-up-form input{
+    height: 50px;
+    padding: 1rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    border: 1px solid rgb(104, 184, 187);
+}
+.login-form input:focus,.sign-up-form input:focus{
+    border: 2px solid rgb(104, 184, 187);
+}
+.login-form button,.sign-up-form button{
+    height: 50px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid rgb(104, 184, 187);
+    transition: all .25s ease-in-out;
+}
+.login-form button:hover,.sign-up-form button:hover{
+    background-color: rgb(104, 184, 187) !important;
+    color: #fff;
+}
+
+.login-form.active{
+    display: flex;
+}
+.sign-up-form.active{
+    display: flex;
+}
+
+/*contact page*/
+input,
+textarea {
+    color: #fff;
+}
+
+.container {
+    margin-top: 6rem;
+    margin-bottom: -6rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.form {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+}
+
+.contact-form {
+    background-color: rgb(134, 214, 217);
+    position: relative;
+}
+
+.circle {
+    border-radius: 50%;
+    background: linear-gradient(135deg, transparent 20%, rgb(7, 14, 49));
+    position: absolute;
+}
+
+.circle.one {
+    width: 130px;
+    height: 130px;
+    top: 130px;
+    right: -40px;
+}
+
+.circle.two {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 30px;
+}
+
+.contact-form:before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: rgb(134, 214, 217);
+    transform: rotate(45deg);
+    top: 50px;
+    left: -13px;
+}
+
+form {
+    padding: 2.3rem 2.2rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+}
+
+.title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.7rem;
+}
+
+.input-container {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.input-container input {
+    width: 100%;
+    outline: none;
+    border: 2px solid #fafafa;
+    background: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.input-container textarea.input {
+    padding: 0.5rem 1.2rem;
+    width: 100%;
+    min-height: 50px;
+    border-radius: 22px;
+    resize: none;
+    overflow-y: auto;
+    background-color: rgb(134, 214, 217);
+    border: 2px solid #fafafa;
+    outline: none;
+}
+.input-container input:focus,.input-container textarea:focus{
+    border: 2px solid rgb(104, 184, 187);
+}
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 400;
+    pointer-events: none;
+    z-index: 1000;
+    transform: 0.5s;
+}
+
+.input-container.textarea label {
+    top: 1rem;
+    transform: translateY(0);
+}
+
+.btn {
+    padding: 0.6rem 1.3rem;
+    background-color: #fff;
+    border: 2px solid #fff;
+    font-size: 0.95rem;
+    color: rgb(134, 214, 217);
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3;
+}
+
+.btn:hover {
+    background-color: rgb(134, 214, 217);
+    color: #fff;
+}
+
+.input-container span {
+    position: absolute;
+    top: -6px;
+    left: 58px;
+    transform: translate(-50%);
+    font-size: 0.8rem;
+    padding: 0 0.4rem;
+    color: transparent;
+    pointer-events: none;
+    z-index: 500;
+}
+
+.input-container span:before,
+.input-container span:after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    opacity: 0;
+    transition: 0.3s;
+    height: 5px;
+    background-color: rgb(134, 214, 217);
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.input-container span:before {
+    left: 50%;
+}
+
+.input-container span:after {
+    right: 50%;
+}
+
+.input-container.focus label {
+    top: 0;
+    transform: translateY(-50%);
+    left: 28px;
+    font-size: 0.8rem;
+}
+
+.input-container.focus span:before,
+.input-container.focus span:after {
+    width: 50%;
+    opacity: 1;
+}
+
+.contact-info {
+    padding: 2.3rem 2.2rem;
+    position: relative;
+}
+
+.contact-info .title {
+    color: rgb(134, 214, 217);
+}
+
+.text {
+    color: #333;
+    margin: 1.5rem 0 2rem 0;
+}
+
+.information {
+    display: flex;
+    color: #555;
+    margin: 0.7rem 0;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.icon {
+    width: 28px;
+    margin-right: 0.7rem;
+}
+
+.social-media p {
+    color: #333;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.social-icons a {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background: linear-gradient(34deg, rgb(134, 214, 217), rgb(4, 5, 63));
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.05);
+}
+
+.contact-info:before {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 22px solid rgb(134, 214, 217);
+    bottom: -140px;
+    right: 60px;
+    opacity: 0.3;
+}
+
+
+
+
+
+
+
+
+
+
+/*media query for responsive*/
+@media (max-width:700px){
+    nav{
+        font-size: 16px;
+    }
+    .website-introduction{
+        font-size: 18px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    .menu{
+        width: 130px;
+        transform: translateX(-100%) translateY(0);
+        font-size: 15px;
+        display: block;
+    }
+    .menu ul{
+        padding-top: 4rem;
+    }
+    .menu.open{
+        transform: translateX(0);
+    }
+    .shoes-types-grid{
+        grid-template-rows: 50vh;
+        grid-auto-rows: 25vh;
+    }
+    .shoes-type .type-name,.shoes-type .shop-now-link{
+        font-size: 13px;
+    }
+    .quality-description,.shipping-description{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .quality,.country-selection-container{
+        width: 80%;
+        height: 40vh;
+        justify-content: center;
+    }
+    .link-description{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .quality-description.show-on-screen,.shipping-description.show-on-screen{
+        transform: translateX(0);
+    }
+    .link-description.show-on-screen{
+        transform: translateX(0);
+    }
+}
+
+
+

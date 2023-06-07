@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4c52f30faa.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <script src="products.js" defer></script>
+    <script defer src="script.js"></script>
+    <title>Products</title>
+</head>
+<body>
+    <section class="header products">
+        <nav>
+            <div class="menu-btn"  id="menubtn">
+                <div class="menu-btn_content" data-menu-btn></div>
+            </div>
+            <div class="store-icon">
+                Men's Shoes
+            </div>
+            <div class="cart-container">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="menu" id="menucontainer">
+                <div class="menu-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="registration.html">Sign In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    
+    <div class="search-filter">
+        <h4>Search by</h4>
+        <div class="filters-container">
+            <div class="drop-down" data-dropdown>
+                <Button class="drop-button" data-dropdown-button>Category</Button>
+                <div class="drop-down-menu">
+                    <a  data-category-selection data-dropdown-selection>All</a>
+                    <a  data-category-selection data-dropdown-selection>Oxford</a>
+                    <a  data-category-selection data-dropdown-selection>Sport</a>
+                    <a  data-category-selection data-dropdown-selection>Chelsea Boot</a>
+                    <a  data-category-selection data-dropdown-selection>Classic</a>
+                    <a  data-category-selection data-dropdown-selection>Sandals</a>
+                    <button class="apply" data-apply-button>Apply</button>
+                </div>
+            </div>
+            <div class="drop-down" data-dropdown>
+                <Button class="drop-button" data-dropdown-button>Brand</Button>
+                <div class="drop-down-menu">
+                    <a  data-brand-selection data-dropdown-selection>Adidas</a>
+                    <a  data-brand-selection data-dropdown-selection>Puma</a>
+                    <a  data-brand-selection data-dropdown-selection>Lacoste</a>
+                    <a  data-brand-selection data-dropdown-selection>Timberland</a>
+                    <a  data-brand-selection data-dropdown-selection>Converse</a>
+                    <a  data-brand-selection data-dropdown-selection>New Balance</a>
+                    <button class="apply" data-apply-button>Apply</button>
+                </div>
+            </div>
+            <div class="drop-down" data-dropdown>
+                <Button class="drop-button" data-dropdown-button>Size</Button>
+                <div class="drop-down-menu sizes">
+                    <div class="size">
+                        <input type="checkbox" value="38" name="size1" data-size-selection>
+                        <label for="size1">38</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="39" name="size2" data-size-selection>
+                        <label for="size2">39</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="40" name="size3" data-size-selection>
+                        <label for="size3">40</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="41" name="size4" data-size-selection>
+                        <label for="size4">41</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="42" name="size5" data-size-selection>
+                        <label for="size5">42</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="43" name="size6" data-size-selection>
+                        <label for="size6">43</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="44" name="size7" data-size-selection>
+                        <label for="size7">44</label>
+                    </div>
+                    <div class="size">
+                        <input type="checkbox" value="45" name="size1" data-size-selection>
+                        <label for="size1">45</label>
+                    </div>
+                    <button class="apply" data-apply-button>Apply</button>
+                </div>
+            </div>
+            <div class="drop-down" data-dropdown>
+                <Button class="drop-button" data-dropdown-button>Price</Button>
+                <div class="drop-down-menu price">
+                    <div class="price-input">
+                        <div class="field">
+                            <span>Min</span>
+                            <input type="number" class="input-min" min="50" max="300" value="50" onchange="ChangePricesSelection(this)" data-price-selection>
+                        </div>
+                        <div class="separator">-</div>
+                        <div class="field">
+                            <span>Max</span>
+                            <input type="number" class="input-max" min="300" max="700" value="700" onchange="ChangePricesSelection(this)" data-price-selection>
+                        </div>
+                    </div>
+                    <button class="apply" data-apply-button>Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="products">
+        <div class="search-filters" data-search-filters>
+            <h5>Your Selection:</h5>
+            <ul data-filters-container></ul>
+        </div>
+        <div class="products-container">
+            <!--Oxford shoes-->
+            <div class="product ox1 Oxford Lacoste">
+                <div class="product-image">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="product-type-price">
+                    <div class="product-type">Oxford</div>
+                    <div class="product-price">180$</div>
+                </div>
+                <div class="sizes-available">
+                    <p>Sizes Available:</p>
+                    <div class="available">
+                    <div class="size-available">40</div>
+                    <div class="size-available">41</div>
+                    <div class="size-available">42</div>
+                    <div class="size-available">43</div>
+                    <div class="size-available">44</div>
+                    <div class="size-available">45</div>
+                    </div>
+                </div>
+                <div class="colors-available">
+                    <p>Colors Available:</p>
+                    <div class="available">
+                        <div class="color-available color1"></div>
+                        <div class="color-available color2"></div>
+                    </div>
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+                <div class="overlay-product"></div>
+            </div>
+
+            <div class="product ox2 Oxford Lacoste">
+                <div class="product-image">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="product-type-price">
+                    <div class="product-type">Oxford</div>
+                    <div class="product-price">220$</div>
+                </div>
+                <div class="sizes-available">
+                    <p>Sizes Available:</p>
+                    <div class="available">
+                    <div class="size-available">39</div>
+                    <div class="size-available">40</div>
+                    <div class="size-available">41</div>
+                    <div class="size-available">44</div>
+                    </div>
+                </div>
+                <div class="colors-available">
+                    <p>Colors Available:</p>
+                    <div class="available">
+                        <div class="color-available color1"></div>
+                        <div class="color-available color2"></div>
+                        <div class="color-available color3"></div>
+                    </div>
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+                <div class="overlay-product"></div>
+            </div>
+            <div class="product ox3 Oxford NewBalance">
+                <div class="product-image">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="product-type-price">
+                    <div class="product-type">Oxford</div>
+                    <div class="product-price">200$</div>
+                </div>
+                <div class="sizes-available">
+                    <p>Sizes Available:</p>
+                    <div class="available">
+                    <div class="size-available">39</div>
+                    <div class="size-available">41</div>
+                    <div class="size-available">42</div>
+                    <div class="size-available">44</div>
+                    </div>
+                </div>
+                <div class="colors-available">
+                    <p>Colors Available:</p>
+                    <div class="available">
+                        <div class="color-available color1"></div>
+                        <div class="color-available color2"></div>
+                        <div class="color-available color3"></div>
+                    </div>
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+                <div class="overlay-product"></div>
+            </div>
+            <div class="product ox4 Oxford Timberland">
+                <div class="product-image">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="product-type-price">
+                    <div class="product-type">Oxford</div>
+                    <div class="product-price">170$</div>
+                </div>
+                <div class="sizes-available">
+                    <p>Sizes Available:</p>
+                    <div class="available">
+                    <div class="size-available">39</div>
+                    <div class="size-available">40</div>
+                    <div class="size-available">41</div>
+                    <div class="size-available">42</div>
+                    <div class="size-available">44</div>
+                    <div class="size-available">45</div>
+                    </div>
+                </div>
+                <div class="colors-available">
+                    <p>Colors Available:</p>
+                    <div class="available">
+                        <div class="color-available color1"></div>
+                        <div class="color-available color2"></div>
+                        <div class="color-available color3"></div>
+                    </div>
+                </div>
+                <button class="add-to-cart">Add To Cart</button>
+                <div class="overlay-product"></div>
+            </div>
+
+
+
+        <!---sports shoes-->
+        <div class="product sp1 Sport Adidas">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">250$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+        <div class="product sp2 Sport Adidas">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">235$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sp3 Sport Adidas">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">210$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">44</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sp4 Sport Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">215$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sp5 Sport Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">180$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+        <div class="product sp6 Sport Timberland">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">260$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">44</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sp7 Sport Converse">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">200$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sp8 Sport Converse">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sport</div>
+                <div class="product-price">150$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">38</div>
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+
+
+
+        <!---Chelsea Boots-->
+        <div class="product ch1lseaBootBoot Lacoste">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Chelsea Boots</div>
+                <div class="product-price">320$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                <div class="size-available">46</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+        <div class="product ch2 ChelseaBoot NewBalance">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Chelsea Boots</div>
+                <div class="product-price">285$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product ch3 ChelseaBoot NewBalance">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Chelsea Boots</div>
+                <div class="product-price">300$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                <div class="size-available">46</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product ch4 ChelseaBoot Timberland">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Chelsea Boots</div>
+                <div class="product-price">295$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product ch5 ChelseaBoot Lacoste">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Chelsea Boots</div>
+                <div class="product-price">260$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                    <div class="size-available">38</div>
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+
+        <!---Classic Shoes-->
+        <div class="product cl1 Classic Lacoste">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Classic</div>
+                <div class="product-price">240$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                <div class="size-available">46</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product cl2 Classic NewBalance">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Classic</div>
+                <div class="product-price">250$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+
+
+        <!--Sandals-->
+        <div class="product sa1 Sandals Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">80$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                <div class="size-available">45</div>
+                <div class="size-available">46</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+        <div class="product sa2 Sandals Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">75$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sa3 Sandals Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">90$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">41</div>
+                <div class="size-available">45</div>
+                <div class="size-available">46</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sa4 Sandals Adidas">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">85$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                <div class="size-available">43</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sa5 Sandals Adidas">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">60$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                    <div class="size-available">38</div>
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+        <div class="product sa6 Sandals Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">95$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">41</div>
+                <div class="size-available">43</div>
+                <div class="size-available">44</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sa7 Sandals Adidas">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">80$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">39</div>
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">43</div>
+                <div class="size-available">45</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+        <div class="product sa8 Sandals Puma">
+            <div class="product-image">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="product-type-price">
+                <div class="product-type">Sandal</div>
+                <div class="product-price">70$</div>
+            </div>
+            <div class="sizes-available">
+                <p>Sizes Available:</p>
+                <div class="available">
+                <div class="size-available">40</div>
+                <div class="size-available">41</div>
+                <div class="size-available">42</div>
+                </div>
+            </div>
+            <div class="colors-available">
+                <p>Colors Available:</p>
+                <div class="available">
+                    <div class="color-available color1"></div>
+                    <div class="color-available color2"></div>
+                    <div class="color-available color3"></div>
+                    <div class="color-available color4"></div>
+                </div>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+            <div class="overlay-product"></div>
+        </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+               <div class="col-header">
+                Menu
+               </div>
+               <div class="col-content">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Cart</a>
+                <a href="#">Sign In</a>
+               </div>
+            </div>
+            <div class="footer-col">
+                <div class="col-header">
+                 My Account
+                </div>
+                <div class="col-content">
+                 <a href="#">Where Is My Order</a>
+                 <a href="#">Shopping Cart</a>
+                 <a href="#">Sign In</a>
+                 <a href="#">Register</a>
+                </div>
+             </div>
+             <div class="footer-col">
+                <div class="col-header">
+                 Company
+                </div>
+                <div class="col-content">
+                 <a href="#">Customer Service</a>
+                 <a href="#">Terms Of Use</a>
+                 <a href="#">Privacy</a>
+                 <a href="#">About</a>
+                 <a href="#">Returns</a>
+                </div>
+             </div>
+             <div class="footer-col">
+                <div class="col-header">
+                 Contact
+                </div>
+                <div class="col-content">
+                 <p><strong>Telephone</strong><br>+0096176464062</p>
+                 <a href="#">Location-Email Us</a>
+                </div>
+             </div>
+             <div class="footer-col">
+                <div class="col-header">
+                 Social-Media
+                </div>
+                <div class="col-content">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+             </div>
+             <div class="footer-col">
+                <div class="col-header">
+                 Keep In Touch
+                </div>
+                <div class="col-content">
+                    <p>Leave Us Your Email,You’ll be the first to know about special offers and new arrivals.</p>
+                    <div class="footer-email">
+                        <input type="email"  placeholder="Your Email" class="form-control">
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="copy-right-container">
+            <p>Men's Shoes</p>
+            <p>Copyright © 2022 Men's Shoes. All rights reserved.</p>
+            <a href="#">Back To Top</a>
+        </div>
+    </section>
+</body>
+</html>
